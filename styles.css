@@ -108,3 +108,14 @@ main {
 .content-section.active {
     display: block;
 }
+
+
+.grouped-link {
+    margin-right: 10px; 
+    text-decoration: none; 
+}
+
+
+.grouped-link:nth-of-type(2n) {
+    margin-right: 30px;
+}
