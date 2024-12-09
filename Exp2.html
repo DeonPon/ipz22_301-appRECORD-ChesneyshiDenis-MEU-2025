@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Test</title>
+</head>
+<body>
+    <h1>Transaction Test</h1>
+    <p>Результати роботи функції відображатимуться нижче:</p>
+    <div id="results"></div>
+
+    <script>
+        function makeTransaction(quantity, pricePerDroid, customerCredits) {
+            const totalPrice = quantity * pricePerDroid;
+
+            if (totalPrice > customerCredits) {
+                return "Insufficient funds!";
+            } else {
+                return `You ordered ${quantity} droids, and ${totalPrice} is their total cost!`;
+            }
+        }
+
+        // Тестові виклики функції
+        const result1 = makeTransaction(5, 100, 600);
+        const result2 = makeTransaction(10, 50, 400);
+        const result3 = makeTransaction(3, 200, 1000);
+
+        // Виведення результатів на сторінку
+        const resultsDiv = document.getElementById('results');
+        resultsDiv.innerHTML = `
+            <p>${result1}</p>
+            <p>${result2}</p>
+            <p>${result3}</p>
+        `;
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Операції з масивом</title>
+</head>
+<body>
+    <h1>Операції з масивом</h1>
+    <p>Результати операцій з масивом відображатимуться нижче:</p>
+    <div id="results"></div>
+
+    <script>
+        // Функція для створення масиву та виконання операцій
+        function arrayOperations() {
+            // Крок 1: Створення масиву
+            const arrayLength = parseInt(prompt("Введіть кількість елементів масиву:"));
+            const array = [];
+            
+            for (let i = 0; i < arrayLength; i++) {
+                array.push(parseInt(prompt(`Введіть елемент ${i + 1}:`)));
+            }
+
+            // Сума елементів з парними індексами
+            let evenSum = 0;
+            for (let i = 0; i < array.length; i += 2) {
+                evenSum += array[i];
+            }
+
+            // Максимальний елемент і його індекс серед елементів з непарними індексами
+            let maxOddValue = -Infinity;
+            let maxOddIndex = -1;
+            for (let i = 1; i < array.length; i += 2) {
+                if (array[i] > maxOddValue) {
+                    maxOddValue = array[i];
+                    maxOddIndex = i;
+                }
+            }
+
+            // Мінімальний елемент і його індекс серед елементів з непарними індексами
+            let minOddValue = Infinity;
+            let minOddIndex = -1;
+            for (let i = 1; i < array.length; i += 2) {
+                if (array[i] < minOddValue) {
+                    minOddValue = array[i];
+                    minOddIndex = i;
+                }
+            }
+
+            // Виведення результатів
+            const resultsDiv = document.getElementById("results");
+            resultsDiv.innerHTML = `
+                <p>Вхідний масив: [${array}]</p>
+                <p>Сума елементів з парними індексами: ${evenSum}</p>
+                <p>Максимальний елемент серед непарних індексів: ${maxOddValue} на індексі ${maxOddIndex}</p>
+                <p>Мінімальний елемент серед непарних індексів: ${minOddValue} на індексі ${minOddIndex}</p>
+            `;
+
+            // Крок 2: Упорядкування масиву та виведення результату
+            const sortedArray = [...array].sort((a, b) => a - b); // Сортуємо масив за зростанням
+            resultsDiv.innerHTML += `
+                <p>Відсортований масив: [${sortedArray}]</p>
+            `;
+        }
+
+        // Викликаємо функцію для обробки масиву
+        arrayOperations();
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Merge Test</title>
+</head>
+<body>
+    <h1>Array Merge Test</h1>
+    <p>Результати роботи функції відображатимуться нижче:</p>
+    <div id="results"></div>
+
+    <script>
+        function makeArray(firstArray, secondArray, maxLength) {
+            // Об'єднуємо обидва масиви
+            const combinedArray = [...firstArray, ...secondArray];
+
+            // Перевіряємо, чи довжина комбінованого масиву перевищує maxLength
+            if (combinedArray.length > maxLength) {
+                // Повертаємо копію масиву з довжиною maxLength
+                return combinedArray.slice(0, maxLength);
+            } else {
+                // Повертаємо весь комбінований масив
+                return combinedArray;
+            }
+        }
+
+        // Тестові виклики функції
+        const result1 = makeArray([1, 2, 3], [4, 5, 6], 5);
+        const result2 = makeArray([1, 2], [3, 4, 5, 6], 10);
+        const result3 = makeArray([1, 2], [3, 4], 3);
+
+        // Виведення результатів на сторінку
+        const resultsDiv = document.getElementById('results');
+        resultsDiv.innerHTML = `
+            <p>Result 1: [${result1}]</p>
+            <p>Result 2: [${result2}]</p>
+            <p>Result 3: [${result3}]</p>
+        `;
+    </script>
+</body>
+</html>

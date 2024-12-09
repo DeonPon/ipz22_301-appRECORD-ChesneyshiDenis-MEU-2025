@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Багаторівневе меню</title>
+    <style>
+        /* Стиль для горизонтального меню */
+        .horizontal-menu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        .horizontal-menu li {
+            margin: 0 15px;
+            position: relative;
+        }
+        .horizontal-menu a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 20px;
+            display: block;
+        }
+
+        /* Стиль для вертикального меню */
+        .vertical-menu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            width: 200px;
+        }
+        .vertical-menu li {
+            margin-bottom: 10px;
+        }
+        .vertical-menu a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 20px;
+            display: block;
+        }
+
+        /* Підменю */
+        .submenu {
+            list-style-type: none;
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 200px;
+            background-color: #f1f1f1;
+            min-width: 160px;
+        }
+        .horizontal-menu li:hover .submenu {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Багаторівневе меню</h1>
+
+    <!-- Горизонтальне меню -->
+    <ul class="horizontal-menu" id="horizontal-menu">
+        <!-- Пункти меню будуть додані через JavaScript -->
+    </ul>
+
+    <!-- Вертикальне меню -->
+    <ul class="vertical-menu" id="vertical-menu">
+        <!-- Пункти меню будуть додані через JavaScript -->
+    </ul>
+
+    <div id="content">
+        <!-- Вміст буде завантажуватися тут після натискання на пункти меню -->
+    </div>
+
+    <script>
+        // Статичний масив для пунктів меню
+        const menuItems = [
+            { title: 'Головна', link: 'index.html' },
+            { 
+                title: 'Послуги', 
+                link: '#', 
+                submenu: [
+                    { title: 'Ремонт', link: 'service-repair.html' },
+                    { title: 'Консультації', link: 'service-consultation.html' }
+                ] 
+            },
+            { title: 'Про нас', link: 'about-us.html' },
+            { title: 'Контакти', link: 'contact.html' }
+        ];
+
+        // Функція для створення горизонтального меню
+        function createHorizontalMenu() {
+            const menu = document.getElementById('horizontal-menu');
+            menuItems.forEach(item => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = item.link;
+                a.textContent = item.title;
+                li.appendChild(a);
+
+                if (item.submenu) {
+                    const subMenu = document.createElement('ul');
+                    subMenu.className = 'submenu';
+                    item.submenu.forEach(subItem => {
+                        const subLi = document.createElement('li');
+                        const subA = document.createElement('a');
+                        subA.href = subItem.link;
+                        subA.textContent = subItem.title;
+                        subLi.appendChild(subA);
+                        subMenu.appendChild(subLi);
+                    });
+                    li.appendChild(subMenu);
+                }
+                menu.appendChild(li);
+            });
+        }
+
+        // Функція для створення вертикального меню
+        function createVerticalMenu() {
+            const menu = document.getElementById('vertical-menu');
+            menuItems.forEach(item => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = item.link;
+                a.textContent = item.title;
+                li.appendChild(a);
+
+                if (item.submenu) {
+                    const subMenu = document.createElement('ul');
+                    subMenu.className = 'submenu';
+                    item.submenu.forEach(subItem => {
+                        const subLi = document.createElement('li');
+                        const subA = document.createElement('a');
+                        subA.href = subItem.link;
+                        subA.textContent = subItem.title;
+                        subLi.appendChild(subA);
+                        subMenu.appendChild(subLi);
+                    });
+                    li.appendChild(subMenu);
+                }
+                menu.appendChild(li);
+            });
+        }
+
+        // Викликаємо функції для створення меню
+        createHorizontalMenu();
+        createVerticalMenu();
+    </script>
+</body>
+</html>
