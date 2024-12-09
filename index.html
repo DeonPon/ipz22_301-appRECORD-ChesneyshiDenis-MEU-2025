@@ -2302,21 +2302,20 @@ section h2 {
             </div>
             <div id="goal3" class="lab3-section content-section text-content">
                 <p><strong>Тема:</strong>ФУНКЦІОНАЛЬНЕ ЗАСТОСУВАННЯ JAVASCRIPT У HTML-ДОКУМЕНТІ. ВИКОРИСТАННЯ МАСИВІВ У
-                    JS-СЦЕНАРІЯХ. РЕАЛІЗАЦІЯ ПРОГРАМ ЗАСОВАМИ МОВИ JAVASCRIPT</p><br />
+                    JS-СЦЕНАРІЯХ. РЕАЛІЗАЦІЯ ПРОГРАМ ЗАСОВАМИ МОВИ JAVASCRIPT</p><br/>
                 <p><strong>Мета:</strong>придбати практичні навички роботи з конструкціями мови JS, масивами та
-                    фугкціями у js-сценаріях. Реалізація програм засовами мови JAVASCRIPT<br />
+                    фугкціями у js-сценаріях. Реалізація програм засовами мови JAVASCRIPT<br/>
                     <a href="https://deonpon.github.io/ipz22_301-appWEB-ChesnishyiDenis-MEU-2025-/"
                         style="margin-right: 10px;">Посилання на живу веб-сторінку</a>
                     <a href="https://github.com/DeonPon/ipz22_301-appWEB-ChesnishyiDenis-MEU-2025-"
-                        style="margin-right: 30px;">Посилання на веб-сторінку</a><br />
+                        style="margin-right: 30px;">Посилання на веб-сторінку</a><br/>
                     <a href="https://deonpon.github.io/ipz22_301-appRECORD-ChesneyshiDenis-MEU-2025/"
                         style="margin-right: 10px;">Посилання на живу сторінку звітного HTML документа</a>
                     <a href="https://github.com/DeonPon/ipz22_301-appRECORD-ChesneyshiDenis-MEU-2025"
                         style="margin-right: 30px;">Посилання на сторінку звітного HTML документа</a><br />
                     <a href="https://deonpon.github.io/ipz22_301--app-INDEPENDENT-ChesneyshiDenis-MEU-2025"
                         style="margin-right: 10px;">Посилання на живу сторінку з самостійними роботами</a>
-                    <a href="https://github.com/DeonPon/ipz22_301--app-INDEPENDENT-ChesneyshiDenis-MEU-2025"> Посилання
-                        на сторінку з самостійними роботами</a>
+                    <a href="https://github.com/DeonPon/ipz22_301--app-INDEPENDENT-ChesneyshiDenis-MEU-2025"> Посилання на сторінку з самостійними роботами</a>
             </div>
             <div id="task-1" class="lab3-section content-section text-content">
                 <p>Завдання №1. Варіант 2</p>
@@ -2718,6 +2717,332 @@ section h2 {
             </div>
         </div>
 
+     <!-- Лабораторна робота 3.2 -->
+        <div id="lab3_2" class="content-section">
+            <div class="sidebar">
+                <button onclick="showSection('introduction', 'lab3_2')">Тема, мета, місце розташування сайту та звіту</button>
+                <button onclick="showSection('tasks-3_21', 'lab3_2')">Завдання 2</button>
+                <button onclick="showSection('task-3_22', 'lab3_2')">Завдання 4</button>
+                <button onclick="showSection('task-3_23', 'lab3_2')">Завдання 6</button>
+                <button onclick="showSection('task-3_24', 'lab3_2')">Завдання 8</button>
+                <button onclick="showSection('task-3_25', 'lab3_2')">Завдання 9</button>
+                <button onclick="showSection('task-3_26', 'lab3_2')">Завдання 10</button>
+                <button onclick="showSection('conclusions-3_2', 'lab3_2')">Висновoк</button>
+            </div>
+            <div id="introduction" class="lab3_2-section content-section text-content">
+                <p><strong>Тема:</strong> Методи об'єкта. Масив об'єктів. Деструктуризація об'єктів. Сallback.  Стрілочні функції. Стрілочні функції як колбеки. </p><br/>
+                <p><strong>Мета:</strong> Придбати практичні навички роботи з об'єктами. Методи об'єкта.. Callback. Стрілочні функції. Стрілочні функції як колбеки. Реалізація програм засовами мови JAVASCRIPT<br/>
+        
+                    <a href="https://deonpon.github.io/ipz22_301-appWEB-ChesnishyiDenis-MEU-2025-/"
+                        style="margin-right: 10px;">Посилання на живу веб-сторінку</a>
+                    <a href="https://github.com/DeonPon/ipz22_301-appWEB-ChesnishyiDenis-MEU-2025-"
+                        style="margin-right: 30px;">Посилання на веб-сторінку</a><br/>
+                    <a href="https://deonpon.github.io/ipz22_301-appRECORD-ChesneyshiDenis-MEU-2025/"
+                        style="margin-right: 10px;">Посилання на живу сторінку звітного HTML документа</a>
+                    <a href="https://github.com/DeonPon/ipz22_301-appRECORD-ChesneyshiDenis-MEU-2025"
+                        style="margin-right: 30px;">Посилання на сторінку звітного HTML документа</a><br />
+                    <a href="https://deonpon.github.io/ipz22_301--app-INDEPENDENT-ChesneyshiDenis-MEU-2025"
+                        style="margin-right: 10px;">Посилання на живу сторінку з самостійними роботами</a>
+                    <a href="https://github.com/DeonPon/ipz22_301--app-INDEPENDENT-ChesneyshiDenis-MEU-2025"> Посилання на сторінку з самостійними роботами</a>
+            </div>
+            <div id="tasks-3_21" class="lab3_2-section content-section text-content">
+                <h2>Завдання 2</h2>
+                <pre>
+                    function getProductDetails(productId, successCallback, errorCallback) {
+                        // Симульовані дані про товари
+                        const products = [
+                            { id: 1, name: 'Repair Droid', price: 100, description: 'A helpful droid for repairs.' },
+                            { id: 2, name: 'Astromech Droid', price: 200, description: 'A versatile astromech droid.' },
+                            { id: 3, name: 'Protocol Droid', price: 300, description: 'A diplomatic protocol droid.' }
+                        ];
+                    
+                        // Знаходимо товар за заданим ідентифікатором
+                        const product = products.find(item => item.id === productId);
+                    
+                        if (product) {
+                            // Якщо товар знайдений, викликаємо successCallback і передаємо товар
+                            successCallback(product);
+                        } else {
+                            // Якщо товар не знайдений, викликаємо errorCallback з повідомленням
+                            errorCallback('Product not found!');
+                        }
+                    }
+                    
+                    // Приклад використання функції:
+                    
+                    // Колбек для успішного отримання даних
+                    function handleSuccess(product) {
+                        console.log('Product found:', product);
+                    }
+                    
+                    // Колбек для обробки помилки
+                    function handleError(message) {
+                        console.log('Error:', message);
+                    }
+                    
+                    // Виклик функції з ідентифікатором товару
+                    getProductDetails(2, handleSuccess, handleError);  // Товар знайдений
+                    
+                    getProductDetails(4, handleSuccess, handleError);  // Товар не знайдений
+                    Опис функції:
+                    Вхідні параметри:
+                    
+                    productId: Ідентифікатор товару, для якого потрібно отримати деталі.
+                    successCallback: Функція, яка буде викликана, якщо товар знайдений. Їй буде переданий об'єкт товару.
+                    errorCallback: Функція, яка буде викликана, якщо товар не знайдений. Їй буде передано повідомлення про помилку.
+                    Логіка:
+                    
+                    Функція спочатку перевіряє, чи є товар з вказаним productId в масиві products.
+                    Якщо товар знайдений, викликається successCallback з передачею даних про товар.
+                    Якщо товар не знайдений, викликається errorCallback з повідомленням про помилку.
+                    Приклад виклику:
+                    У прикладі вище, при виклику getProductDetails(2, handleSuccess, handleError), товар з ідентифікатором 2 знайдеться і буде передано в handleSuccess, вивівши в консоль інформацію про товар. Для виклику з ідентифікатором 4, якого немає в масиві, буде викликано handleError з повідомленням про помилку.
+                </pre>
+            </div>
+                
+            <div id="tasks-3_22" class="lab3_2-section content-section text-content">
+                <h2>Завдання 4</h2>
+                <pre>
+                    const concerts = {
+                        Київ: new Date("2020-04-01"),
+                        Умань: new Date("2025-07-02"),
+                        Вінниця: new Date("2020-04-21"),
+                        Одеса: new Date("2025-03-15"),
+                        Хмельницький: new Date("2020-04-18"),
+                        Харків: new Date("2025-07-10"),
+                    };
+                    
+                    const currentDate = new Date();
+                    
+                    // Отримуємо масив міст, де концерт ще не відбувся, і сортуємо їх за датою
+                    const upcomingConcerts = Object.entries(concerts)
+                        .filter(([city, date]) => date > currentDate) // Фільтруємо міста, де концерт ще не відбувся
+                        .sort((a, b) => a[1] - b[1]) // Сортуємо за датою
+                        .map(([city]) => city); // Отримуємо тільки міста
+                    
+                    console.log(upcomingConcerts); // Очікуваний результат: ["Одеса", "Умань", "Харків"]
+                    Пояснення:
+                    Object.entries(concerts) — перетворює об'єкт concerts в масив пар [місто, дата концерту].
+                    filter(([city, date]) => date > currentDate) — фільтрує пари, де дата концерту більша за поточну дату.
+                    sort((a, b) => a[1] - b[1]) — сортує масив за датами в хронологічному порядку.
+                    map(([city]) => city) — отримує масив міст з відфільтрованих і відсортованих пар.
+                    Результат виведе у консоль масив міст, де концерт ще не відбувся, і відсортований за датою проведення: ["Одеса", "Умань", "Харків"].
+                </pre>
+        </div>
+        <div id="tasks-3_23" class="lab3_2-section content-section text-content">
+                <h2>Завдання 6</h2>
+                <pre>
+                    function applyDiscount(medicines) {
+                        return medicines.map((medicine, index) => {
+                            if (medicine.price > 300) {
+                                // Додаємо знижку 30%
+                                const discountedPrice = medicine.price * 0.7;
+                                return {
+                                    id: index + 1,  // Надаємо ідентифікатор
+                                    name: medicine.name,
+                                    price: discountedPrice.toFixed(2)  // Встановлюємо нову ціну з знижкою
+                                };
+                            } else {
+                                // Якщо ціна не перевищує 300 грн, залишаємо без змін
+                                return {
+                                    id: index + 1,
+                                    name: medicine.name,
+                                    price: medicine.price
+                                };
+                            }
+                        });
+                    }
+                    
+                    const medicines = [
+                        { name: "Noshpa", price: 170 },
+                        { name: "Analgin", price: 55 },
+                        { name: "Quanil", price: 310 },
+                        { name: "Alphacholine", price: 390 },
+                    ];
+                    
+                    const updatedMedicines = applyDiscount(medicines);
+                    console.log(updatedMedicines);
+                    Пояснення:
+                    map() — використовується для створення нового масиву з об'єктами, кожен з яких має ідентифікатор (id) та, за потреби, знижку.
+                    medicine.price > 300 — перевірка на ціну, що перевищує 300 грн. Якщо умова виконується, ціна зменшується на 30%.
+                    discountedPrice.toFixed(2) — округляє знижку до двох знаків після коми.
+                    index + 1 — для кожного елемента створюється унікальний ідентифікатор, що відповідає порядковому номеру в масиві (починається з 1).
+                    Очікуваний результат:
+                    javascript
+                    Копировать код
+                    [
+                      { id: 1, name: "Noshpa", price: 170 },
+                      { id: 2, name: "Analgin", price: 55 },
+                      { id: 3, name: "Quanil", price: 217.00 },
+                      { id: 4, name: "Alphacholine", price: 273.00 }
+                    ]
+                    Медикаменти з ціною більше 300 грн (Quanil та Alphacholine) отримують знижку на 30%.
+                </pre>
+        </div>
+                
+        <div id="tasks-3_24" class="lab3_2-section content-section text-content">
+                <h2>Завдання 8</h2>
+                <pre>
+                    function Storage(initialItems) {
+                        // Властивість для зберігання товарів
+                        this.items = initialItems;
+                    
+                        // Метод для отримання всіх товарів
+                        this.getItems = function() {
+                            return this.items;
+                        };
+                    
+                        // Метод для додавання нового товару
+                        this.addItems = function(item) {
+                            this.items.push(item);
+                        };
+                    
+                        // Метод для видалення товару
+                        this.removeItem = function(item) {
+                            const index = this.items.indexOf(item);
+                            if (index !== -1) {
+                                this.items.splice(index, 1); // Видаляємо товар з масиву
+                            } else {
+                                console.log(`${item} не знайдено!`);
+                            }
+                        };
+                    }
+                    
+                    // Приклад використання:
+                    
+                    const arr = ["apple", "banana", "mango"];
+                    const storage = new Storage(arr);
+                    
+                    // Додаємо новий товар
+                    storage.addItems("orange");
+                    console.log(storage.getItems()); // ["apple", "banana", "mango", "orange"]
+                    
+                    // Видаляємо товар
+                    storage.removeItem("banana");
+                    console.log(storage.getItems()); // ["apple", "mango", "orange"]
+                    
+                    // Спроба видалити неіснуючий товар
+                    storage.removeItem("grape"); // "grape не знайдено!"
+                    Пояснення:
+                    Конструктор Storage приймає один аргумент — початковий масив товарів і ініціалізує його в властивість items.
+                    Метод getItems() — повертає поточний масив товарів.
+                    Метод addItems(item) — додає новий товар до масиву items.
+                    Метод removeItem(item) — шукає товар в масиві і видаляє його, якщо він є. Якщо товар не знайдений, виводиться повідомлення про помилку.
+                    Приклад роботи:
+                    Спочатку масив товарів: ["apple", "banana", "mango"].
+                    Після додавання "orange" масив стає: ["apple", "banana", "mango", "orange"].
+                    Після видалення "banana" масив стає: ["apple", "mango", "orange"].
+                    Якщо спробувати видалити товар, якого немає (наприклад, "grape"), буде виведено повідомлення, що товар не знайдений.
+                    Цей підхід дає змогу ефективно управляти списком товарів за допомогою методів додавання та видалення.
+                </pre>
+        </div>
+        <div id="tasks-3_25" class="lab3_2-section content-section text-content"> 
+                <h2>Завдання 9</h2>
+                <pre>
+                    function countTags(tweets) {
+                        const tagCount = {};
+                    
+                        // Проходимо кожен твіт
+                        tweets.forEach(tweet => {
+                            // Проходимо кожен тег у твітті
+                            tweet.tags.forEach(tag => {
+                                // Якщо тег вже є в об'єкті, збільшуємо його лічильник
+                                if (tagCount[tag]) {
+                                    tagCount[tag]++;
+                                } else {
+                                    // Якщо тег ще немає, додаємо його з початковим значенням 1
+                                    tagCount[tag] = 1;
+                                }
+                            });
+                        });
+                    
+                        return tagCount;
+                    }
+                    
+                    const tweets = [
+                        { id: "000", likes: 5, tags: ["js", "nodejs"] },
+                        { id: "001", likes: 2, tags: ["html", "css"] },
+                        { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+                        { id: "003", likes: 8, tags: ["css", "react"] },
+                        { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+                    ];
+                    
+                    console.log(countTags(tweets));
+                    // Очікуваний результат:
+                    // { js: 3, nodejs: 3, html: 2, css: 2, react: 2 }
+                    Пояснення:
+                    tagCount — об'єкт, який буде зберігати кількість кожного тегу.
+                    forEach — метод, який дозволяє пройти по кожному твітту і кожному тегу в цьому твіті.
+                    Для кожного тегу перевіряємо, чи він уже є в об'єкті tagCount:
+                    Якщо тег вже є, збільшуємо його лічильник на 1.
+                    Якщо тег ще не додано, додаємо його з початковим значенням 1.
+                    Після проходу по всіх твіттах функція повертає об'єкт з кількістю кожного тегу.
+                    Очікуваний результат:
+                    javascript
+                    Копировать код
+                    {
+                      js: 3,
+                      nodejs: 3,
+                      html: 2,
+                      css: 2,
+                      react: 2
+                    }
+                </pre>
+        </div>
+                
+                <h2>Завдання 10</h2>
+                <pre>
+                // Перевірка правильності закриття дужок у рядку
+                function checkBrackets(str) {
+                    const stack = [];
+                    const brackets = {
+                        "(": ")",
+                        "{": "}",
+                        "[": "]",
+                    };
+                
+                    for (const char of str) {
+                        if (brackets[char]) {
+                            stack.push(char); // Відкриваюча дужка додається в стек
+                        } else if (Object.values(brackets).includes(char)) {
+                            const last = stack.pop(); // Порівнюємо зі стеком
+                            if (brackets[last] !== char) return false; // Помилка, якщо дужки не збігаються
+                        }
+                    }
+                
+                    return stack.length === 0; // Перевіряємо, чи всі дужки закриті
+                }
+                
+                // Приклад використання:
+                console.log(checkBrackets("someFn({})")); // true
+                console.log(checkBrackets("someFn({[)]}")); // false
+                </pre>
+            </div>
+            <div id="conclusions-3_2" class="lab3_2-section content-section text-content">
+                <h2>Висновки до лабораторної роботи</h2>
+                <p>1. <strong>Робота з функціями та колбеками:</strong> В процесі виконання завдання було відпрацьовано використання
+                    функцій з колбеками. Це дозволяє створювати більш гнучкі та динамічні програми, де функції можуть передавати
+                    результат своєї роботи іншій функції для подальшої обробки.</p>
+                
+                <p>2. <strong>Обробка об'єктів і масивів:</strong> Завдання допомогло закріпити навички роботи з об'єктами та масивами,
+                    зокрема, маніпуляція даними за допомогою таких методів як <code>map</code>, <code>filter</code>, <code>reduce</code>
+                    та <code>sort</code>. Вони є важливими інструментами для обробки та трансформації даних у JavaScript.</p>
+                
+                <p>3. <strong>Приватні властивості в класах:</strong> Вивчення приватних властивостей у класах через використання
+                    символу <code>#</code> дозволило зрозуміти концепцію інкапсуляції в об'єктно-орієнтованому програмуванні. Приватні
+                    властивості забезпечують контроль доступу до даних, що підвищує безпеку і модульність коду.</p>
+                
+                <p>4. <strong>Робота з датами:</strong> Завдання на роботу з медичними препаратами і їх датами придатності показало
+                    важливість роботи з об'єктами типу <code>Date</code> для обробки дат та порівняння їх.</p>
+                
+                <p>5. <strong>Перевірка правильності структури рядка:</strong> Виконання задачі на перевірку правильності закриття дужок
+                    допомогло краще зрозуміти роботу з даними у вигляді рядків та алгоритми для їх обробки в JavaScript.</p>
+
+            </div>
+        </div>
+
+    </div>
+</main>
 
         <script>
             // відображення вибраної лабораторної роботи
