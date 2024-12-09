@@ -2721,12 +2721,12 @@ section h2 {
         <div id="lab3_2" class="content-section">
             <div class="sidebar">
                 <button onclick="showSection('introduction', 'lab3_2')">Тема, мета, місце розташування сайту та звіту</button>
-                <button onclick="showSection('tasks-3_21', 'lab3_2')">Завдання 2</button>
-                <button onclick="showSection('task-3_22', 'lab3_2')">Завдання 4</button>
-                <button onclick="showSection('task-3_23', 'lab3_2')">Завдання 6</button>
-                <button onclick="showSection('task-3_24', 'lab3_2')">Завдання 8</button>
-                <button onclick="showSection('task-3_25', 'lab3_2')">Завдання 9</button>
-                <button onclick="showSection('task-3_26', 'lab3_2')">Завдання 10</button>
+                <button onclick="showSection('tasks32', 'lab3_2')">Завдання 2</button>
+                <button onclick="showSection('task34', 'lab3_2')">Завдання 4</button>
+                <button onclick="showSection('task36', 'lab3_2')">Завдання 6</button>
+                <button onclick="showSection('task38', 'lab3_2')">Завдання 8</button>
+                <button onclick="showSection('task39', 'lab3_2')">Завдання 9</button>
+                <button onclick="showSection('task310', 'lab3_2')">Завдання 10</button>
                 <button onclick="showSection('conclusions-3_2', 'lab3_2')">Висновoк</button>
             </div>
             <div id="introduction" class="lab3_2-section content-section text-content">
@@ -2745,7 +2745,7 @@ section h2 {
                         style="margin-right: 10px;">Посилання на живу сторінку з самостійними роботами</a>
                     <a href="https://github.com/DeonPon/ipz22_301--app-INDEPENDENT-ChesneyshiDenis-MEU-2025"> Посилання на сторінку з самостійними роботами</a>
             </div>
-            <div id="tasks-3_21" class="lab3_2-section content-section text-content">
+            <div id="tasks32" class="lab3_2-section content-section text-content">
                 <h2>Завдання 2</h2>
                 <pre>
                     function getProductDetails(productId, successCallback, errorCallback) {
@@ -2799,11 +2799,10 @@ section h2 {
                     У прикладі вище, при виклику getProductDetails(2, handleSuccess, handleError), товар з ідентифікатором 2 знайдеться і буде передано в handleSuccess, вивівши в консоль інформацію про товар. Для виклику з ідентифікатором 4, якого немає в масиві, буде викликано handleError з повідомленням про помилку.
                 </pre>
             </div>
-        </div>
-                
-            <div id="tasks-3_22" class="lab3_2-section content-section text-content">
+            
+            <div id="task34" class="lab3_2-section content-section text-content">
                 <h2>Завдання 4</h2>
-                <pre>
+                <pre><code>
                     const concerts = {
                         Київ: new Date("2020-04-01"),
                         Умань: new Date("2025-07-02"),
@@ -2828,11 +2827,13 @@ section h2 {
                     sort((a, b) => a[1] - b[1]) — сортує масив за датами в хронологічному порядку.
                     map(([city]) => city) — отримує масив міст з відфільтрованих і відсортованих пар.
                     Результат виведе у консоль масив міст, де концерт ще не відбувся, і відсортований за датою проведення: ["Одеса", "Умань", "Харків"].
-                </pre>
-        </div>
-        <div id="tasks-3_23" class="lab3_2-section content-section text-content">
+                </pre></code>
+         </div>
+
+
+         <div id="task36" class="lab3_2-section content-section text-content">
                 <h2>Завдання 6</h2>
-                <pre>
+                <pre><code>
                     function applyDiscount(medicines) {
                         return medicines.map((medicine, index) => {
                             if (medicine.price > 300) {
@@ -2878,12 +2879,12 @@ section h2 {
                       { id: 4, name: "Alphacholine", price: 273.00 }
                     ]
                     Медикаменти з ціною більше 300 грн (Quanil та Alphacholine) отримують знижку на 30%.
-                </pre>
-        </div>
+                </pre></code>
+         </div>
                 
-        <div id="tasks-3_24" class="lab3_2-section content-section text-content">
+         <div id="task38" class="lab3_2-section content-section text-content">
                 <h2>Завдання 8</h2>
-                <pre>
+                <pre><code>
                     function Storage(initialItems) {
                         // Властивість для зберігання товарів
                         this.items = initialItems;
@@ -2935,9 +2936,9 @@ section h2 {
                     Після видалення "banana" масив стає: ["apple", "mango", "orange"].
                     Якщо спробувати видалити товар, якого немає (наприклад, "grape"), буде виведено повідомлення, що товар не знайдений.
                     Цей підхід дає змогу ефективно управляти списком товарів за допомогою методів додавання та видалення.
-                </pre>
-        </div>
-        <div id="tasks-3_25" class="lab3_2-section content-section text-content"> 
+                </pre></code>
+         </div>
+         <div id="task39" class="lab3_2-section content-section text-content"> 
                 <h2>Завдання 9</h2>
                 <pre>
                     function countTags(tweets) {
@@ -2990,7 +2991,7 @@ section h2 {
                     }
                 </pre>
         </div>
-        <div id="tasks-3_26" class="lab3_2-section content-section text-content"> 
+        <div id="task310" class="lab3_2-section content-section text-content"> 
                 <h2>Завдання 10</h2>
                 <pre>
                 // Перевірка правильності закриття дужок у рядку
@@ -3040,8 +3041,8 @@ section h2 {
                     допомогло краще зрозуміти роботу з даними у вигляді рядків та алгоритми для їх обробки в JavaScript.</p>
 
             </div>
-        </div>
-    </div>
+        
+    
 
     </div>
 </main>
