@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicines with Discount</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .discount {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ліки зі знижкою</h1>
+    <p>Оновлений список ліків:</p>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Назва</th>
+                <th>Ціна (грн)</th>
+            </tr>
+        </thead>
+        <tbody id="medicines-table"></tbody>
+    </table>
+
+    <script>
+        function applyDiscount(medicines) {
+            return medicines.map((medicine, index) => {
+                if (medicine.price > 300) {
+                    // Додаємо знижку 30%
+                    const discountedPrice = medicine.price * 0.7;
+                    return {
+                        id: index + 1,  // Надаємо ідентифікатор
+                        name: medicine.name,
+                        price: discountedPrice.toFixed(2)  // Встановлюємо нову ціну з знижкою
+                    };
+                } else {
+                    // Якщо ціна не перевищує 300 грн, залишаємо без змін
+                    return {
+                        id: index + 1,
+                        name: medicine.name,
+                        price: medicine.price
+                    };
+                }
+            });
+        }
+
+        const medicines = [
+            { name: "Noshpa", price: 170 },
+            { name: "Analgin", price: 55 },
+            { name: "Quanil", price: 310 },
+            { name: "Alphacholine", price: 390 },
+        ];
+
+        const updatedMedicines = applyDiscount(medicines);
+
+        // Відображення результатів на сторінці
+        const medicinesTable = document.getElementById('medicines-table');
+        updatedMedicines.forEach(medicine => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${medicine.id}</td>
+                <td>${medicine.name}</td>
+                <td class="${medicine.price < 300 ? '' : 'discount'}">${medicine.price}</td>
+            `;
+            medicinesTable.appendChild(row);
+        });
+    </script>
+</body>
+</html>

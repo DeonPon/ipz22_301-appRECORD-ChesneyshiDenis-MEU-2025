@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .success {
+            color: green;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Деталі товару</h1>
+    <p>Результати пошуку відображаються нижче:</p>
+    <div id="results"></div>
+
+    <script>
+        function getProductDetails(productId, successCallback, errorCallback) {
+            // Симульовані дані про товари
+            const products = [
+                { id: 1, name: 'Repair Droid', price: 100, description: 'A helpful droid for repairs.' },
+                { id: 2, name: 'Astromech Droid', price: 200, description: 'A versatile astromech droid.' },
+                { id: 3, name: 'Protocol Droid', price: 300, description: 'A diplomatic protocol droid.' }
+            ];
+
+            // Знаходимо товар за заданим ідентифікатором
+            const product = products.find(item => item.id === productId);
+
+            if (product) {
+                // Якщо товар знайдений, викликаємо successCallback і передаємо товар
+                successCallback(product);
+            } else {
+                // Якщо товар не знайдений, викликаємо errorCallback з повідомленням
+                errorCallback('Product not found!');
+            }
+        }
+
+        // Колбек для успішного отримання даних
+        function handleSuccess(product) {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML += `
+                <div class="success">
+                    <h2>${product.name}</h2>
+                    <p>Ціна: ${product.price} кредитів</p>
+                    <p>Опис: ${product.description}</p>
+                </div>
+            `;
+        }
+
+        // Колбек для обробки помилки
+        function handleError(message) {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML += `
+                <div class="error">
+                    <p>${message}</p>
+                </div>
+            `;
+        }
+
+        // Виклик функції з ідентифікаторами товарів
+        getProductDetails(2, handleSuccess, handleError);  // Товар знайдений
+        getProductDetails(4, handleSuccess, handleError);  // Товар не знайдений
+    </script>
+</body>
+</html>

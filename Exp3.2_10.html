@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bracket Checker</title>
+</head>
+<body>
+
+    <h1>Bracket Validator</h1>
+    <input type="text" id="inputString" placeholder="Enter string with brackets" />
+    <button onclick="validateBrackets()">Check Brackets</button>
+    <p id="result"></p>
+
+    <script>
+        // Функція для перевірки правильності закриття дужок
+        function checkBrackets(str) {
+            const stack = [];
+            const brackets = {
+                "(": ")",
+                "{": "}",
+                "[": "]",
+            };
+
+            for (const char of str) {
+                if (brackets[char]) {
+                    stack.push(char); // Відкриваюча дужка додається в стек
+                } else if (Object.values(brackets).includes(char)) {
+                    const last = stack.pop(); // Порівнюємо зі стеком
+                    if (brackets[last] !== char) return false; // Помилка, якщо дужки не збігаються
+                }
+            }
+
+            return stack.length === 0; // Перевіряємо, чи всі дужки закриті
+        }
+
+        // Вбудований функціонал для перевірки через HTML
+        function validateBrackets() {
+            const inputString = document.getElementById('inputString').value;
+            const isValid = checkBrackets(inputString);
+            document.getElementById('result').textContent = isValid ? 'Valid' : 'Invalid';
+        }
+    </script>
+
+</body>
+</html>

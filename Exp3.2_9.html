@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tag Counter</title>
+</head>
+<body>
+
+    <h1>Tag Counter from Tweets</h1>
+    <p id="result"></p> <!-- Місце для відображення результату -->
+
+    <script>
+        function countTags(tweets) {
+            const tagCount = {}; // Об'єкт для зберігання кількості тегів
+
+            // Проходимо кожен твіт
+            tweets.forEach(tweet => {
+                // Проходимо кожен тег у твіті
+                tweet.tags.forEach(tag => {
+                    // Якщо тег вже є в об'єкті, збільшуємо його лічильник
+                    if (tagCount[tag]) {
+                        tagCount[tag]++;
+                    } else {
+                        // Якщо тег ще немає, додаємо його з початковим значенням 1
+                        tagCount[tag] = 1;
+                    }
+                });
+            });
+
+            return tagCount;
+        }
+
+        const tweets = [
+            { id: "000", likes: 5, tags: ["js", "nodejs"] },
+            { id: "001", likes: 2, tags: ["html", "css"] },
+            { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+            { id: "003", likes: 8, tags: ["css", "react"] },
+            { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+        ];
+
+        const result = countTags(tweets);
+        
+        // Відображаємо результат в елементі з id="result"
+        document.getElementById('result').textContent = JSON.stringify(result, null, 2);
+    </script>
+
+</body>
+</html>

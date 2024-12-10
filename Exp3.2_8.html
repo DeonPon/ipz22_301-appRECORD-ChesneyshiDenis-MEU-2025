@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storage Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: #f4f4f4;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .buttons {
+            margin-top: 10px;
+        }
+        button {
+            margin-right: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Керування складом</h1>
+    <p>Список товарів:</p>
+    <ul id="items-list"></ul>
+    <div class="buttons">
+        <input type="text" id="item-input" placeholder="Назва товару">
+        <button onclick="addItem()">Додати</button>
+        <button onclick="removeItem()">Видалити</button>
+    </div>
+
+    <script>
+        // Конструктор Storage
+        function Storage(initialItems) {
+            // Властивість для зберігання товарів
+            this.items = initialItems;
+        
+            // Метод для отримання всіх товарів
+            this.getItems = function() {
+                return this.items;
+            };
+        
+            // Метод для додавання нового товару
+            this.addItems = function(item) {
+                this.items.push(item);
+            };
+        
+            // Метод для видалення товару
+            this.removeItem = function(item) {
+                const index = this.items.indexOf(item);
+                if (index !== -1) {
+                    this.items.splice(index, 1); // Видаляємо товар з масиву
+                } else {
+                    console.log(`${item} не знайдено!`);
+                }
+            };
+        }
+
+        // Ініціалізація складу з початковими товарами
+        const storage = new Storage(['Апельсини', 'Банани', 'Яблука']);
+
+        // Вибір елементів DOM
+        const itemsList = document.getElementById('items-list');
+        const itemInput = document.getElementById('item-input');
+
+        // Функція для відображення списку товарів
+        function displayItems() {
+            itemsList.innerHTML = '';
+            storage.getItems().forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                itemsList.appendChild(li);
+            });
+        }
+
+        // Функція для додавання товару
+        function addItem() {
+            const newItem = itemInput.value.trim();
+            if (newItem) {
+                storage.addItems(newItem);
+                displayItems();
+                itemInput.value = ''; // Очищуємо поле вводу
+            } else {
+                alert('Введіть назву товару!');
+            }
+        }
+
+        // Функція для видалення товару
+        function removeItem() {
+            const itemToRemove = itemInput.value.trim();
+            if (itemToRemove) {
+                storage.removeItem(itemToRemove);
+                displayItems();
+                itemInput.value = ''; // Очищуємо поле вводу
+            } else {
+                alert('Введіть назву товару для видалення!');
+            }
+        }
+
+        // Початкове відображення товарів
+        displayItems();
+    </script>
+</body>
+</html>

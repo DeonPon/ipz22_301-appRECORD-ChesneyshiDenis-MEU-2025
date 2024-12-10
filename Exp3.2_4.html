@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Concerts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: #f0f0f0;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Міста з майбутніми концертами</h1>
+    <p>Список міст, де концерти ще не відбулися:</p>
+    <ul id="concerts-list"></ul>
+
+    <script>
+        const concerts = {
+            Київ: new Date("2020-04-01"),
+            Умань: new Date("2025-07-02"),
+            Вінниця: new Date("2020-04-21"),
+            Одеса: new Date("2025-03-15"),
+            Хмельницький: new Date("2020-04-18"),
+            Харків: new Date("2025-07-10"),
+        };
+        
+        const currentDate = new Date();
+        
+        // Отримуємо масив міст, де концерт ще не відбувся, і сортуємо їх за датою
+        const upcomingConcerts = Object.entries(concerts)
+            .filter(([city, date]) => date > currentDate) // Фільтруємо міста, де концерт ще не відбувся
+            .sort((a, b) => a[1] - b[1]) // Сортуємо за датою
+            .map(([city]) => city); // Отримуємо тільки міста
+
+        // Відображаємо результати на сторінці
+        const concertsList = document.getElementById('concerts-list');
+        if (upcomingConcerts.length > 0) {
+            upcomingConcerts.forEach(city => {
+                const li = document.createElement('li');
+                li.textContent = city;
+                concertsList.appendChild(li);
+            });
+        } else {
+            concertsList.innerHTML = '<li>Немає майбутніх концертів.</li>';
+        }
+    </script>
+</body>
+</html>
